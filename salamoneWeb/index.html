@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <!--<link rel="icon" type="image/x-icon" href="ruta/al/favicon.ico">-->
+
+    <title>Salamone — E.E.S.T N1</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Libre+Baskerville:wght@400&display=swap');
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --fondo: #211b19;
+            --crema: #e9e2d4;
+            --dorado: #9c8060;
+            --dorado-suave: rgba(156,128,96,.28);
+        }
+
+
+        /* =========================
+           FUENTES
+        ========================= */
+
+        @font-face {
+            font-family: "Morrison Regular";
+            src: url("/home/morena/Desktop/salamone/font/Morrison-Regular.otf") format("opentype");
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: url("/home/morena/Downloads/cieloDeco.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            color: var(--crema);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+
+            width: calc(100% - 40px);
+            min-height: 100vh;
+
+            margin: 0 20px;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           NAV
+        ========================= */
+
+        .nav {
+            position: relative;
+
+            height: 110px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 70px;
+
+            z-index: 30;
+        }
+
+
+        .nav a {
+            position: relative;
+
+            color: var(--crema);
+
+            text-decoration: none;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+            transition: .3s ease;
+        }
+
+
+        .nav a::before,
+        .nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 50%;
+
+            width: 30px;
+            height: 1px;
+
+            background: var(--dorado);
+        }
+
+
+        .nav a::before {
+            right: calc(100% + 22px);
+        }
+
+
+        .nav a::after {
+            left: calc(100% + 22px);
+        }
+
+
+        .nav a:hover {
+            color: white;
+        }
+
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        .contenido {
+
+            position: relative;
+
+            z-index: 20;
+
+            width: 55%;
+
+            padding-left: 6vw;
+            padding-top: 90px;
+        }
+
+
+        /* =========================
+           AUTOR
+        ========================= */
+
+        .autor {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 24px;
+
+            margin-bottom: 18px;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 16px;
+
+            letter-spacing: 6px;
+        }
+
+
+        .autor::before,
+        .autor::after {
+
+            content: "";
+
+            width: 65px;
+            height: 1px;
+
+            background: var(--dorado);
+        }
+
+
+        /* =========================
+           TITULO
+        ========================= */
+
+        .titulo {
+
+            font-family: "Morrison Regular";
+
+            font-size: clamp(80px, 10vw, 170px);
+
+            font-weight: 400;
+
+            letter-spacing: -6px;
+
+            line-height: .85;
+
+            color: var(--crema);
+
+            white-space: nowrap;
+        }
+
+
+        .titulo::first-letter {
+            letter-spacing: -8px;
+        }
+
+
+        /* =========================
+           SUBTITULO
+        ========================= */
+
+        .subtitulo {
+
+            margin-top: 30px;
+
+            font-family: "Cinzel", serif;
+
+            font-size: clamp(22px, 2.4vw, 36px);
+
+            letter-spacing: 7px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           LINEA DIVISORA
+        ========================= */
+
+        .linea-divisora {
+
+            position: relative;
+
+            width: 520px;
+            max-width: 90%;
+
+            height: 1px;
+
+            margin: 34px 0;
+
+            background: var(--dorado);
+        }
+
+
+        .linea-divisora::after {
+
+            content: "◇";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            padding: 0 12px;
+
+            background: #070721;
+
+            color: var(--crema);
+
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           DESCRIPCION
+        ========================= */
+
+        .descripcion {
+
+            max-width: 570px;
+
+            font-family: "Libre Baskerville", serif;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: #ded6c8;
+        }
+
+
+        /* =========================
+           BOTON EXPLORAR
+        ========================= */
+
+        .btn-explorar {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 35px;
+
+            margin-top: 60px;
+
+            padding: 15px 28px;
+
+            border: 1px solid var(--crema);
+
+            color: var(--crema);
+
+            text-decoration: none;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+            transition: .3s ease;
+        }
+
+
+        .btn-explorar .flecha-deco {
+
+            font-size: 24px;
+
+            transition: .3s ease;
+        }
+
+
+        .btn-explorar:hover {
+
+            background: var(--crema);
+
+            color: #0B0B24;
+        }
+
+
+        .btn-explorar:hover .flecha-deco {
+
+            transform: translateX(8px);
+        }
+
+
+        /* =========================
+           REDES
+        ========================= */
+
+        .redes img {
+
+            position: relative;
+
+            left: 130px;
+            top: 150px;
+
+            width: 50px;
+
+            margin-right: 15px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           ESCULTURA
+        ========================= */
+
+        .angel {
+
+            position: absolute;
+
+            padding-top: 20px;
+
+            z-index: 15;
+
+            right: 4%;
+            bottom: 0;
+
+            width: 1700px;
+            max-width: 720px;
+
+            height: 100vh;
+
+            object-fit: contain;
+
+            object-position: bottom center;
+
+            filter:
+                drop-shadow(-25px 15px 30px rgba(0,0,0,.5));
+
+            transition:
+                filter 1s ease,
+                transform 1s ease;
+        }
+
+
+        .angel:hover {
+
+            transform: scale(1.065);
+        }
+
+
+        /* =========================
+           SCROLL
+        ========================= */
+
+        .scroll {
+
+            position: absolute;
+
+            z-index: 30;
+
+            left: 6vw;
+            bottom: 55px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================
+           RESPONSIVE 1100px
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .contenido {
+                width: 65%;
+            }
+
+            .angel {
+                width: 52vw;
+                right: -2%;
+            }
+
+            .nav {
+                gap: 45px;
+            }
+
+            .nav a {
+                font-size: 14px;
+            }
+        }
+
+
+        /* =========================
+           RESPONSIVE 800px
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                width: calc(100% - 20px);
+                margin: 0 10px;
+            }
+
+            .nav {
+                height: 90px;
+                gap: 25px;
+            }
+
+            .nav a {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .nav a::before,
+            .nav a::after {
+                display: none;
+            }
+
+            .contenido {
+
+                width: 100%;
+
+                padding:
+                    80px
+                    30px
+                    400px;
+            }
+
+            .titulo {
+                font-size: 17vw;
+            }
+
+            .subtitulo {
+                font-size: 18px;
+                letter-spacing: 4px;
+            }
+
+            .descripcion {
+                font-size: 15px;
+                max-width: 500px;
+            }
+
+            .angel {
+
+                width: 85vw;
+
+                height: 65vh;
+
+                right: -12%;
+
+                opacity: .7;
+            }
+
+            .scroll {
+                display: none;
+            }
+        }
+
+
+        /* =========================
+           RESPONSIVE 500px
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .nav {
+                justify-content: space-around;
+                gap: 5px;
+            }
+
+            .nav a {
+                font-size: 9px;
+            }
+
+            .contenido {
+                padding-top: 50px;
+            }
+
+            .autor {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .autor::before,
+            .autor::after {
+                width: 25px;
+            }
+
+            .titulo {
+                font-size: 18vw;
+                letter-spacing: -2px;
+            }
+
+            .subtitulo {
+                white-space: normal;
+                line-height: 1.4;
+            }
+
+            .descripcion {
+                font-size: 14px;
+            }
+
+            .angel {
+                width: 105vw;
+                right: -25%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAV SUPERIOR -->
+
+    <nav class="nav">
+
+        <a href="/home/morena/Desktop/salamone/galeriaSalamone.html">
+            GALERÍA
+        </a>
+
+        <a href="#recorrido">
+            RECORRIDO
+        </a>
+
+        <a href="#biografia">
+            BIOGRAFÍA
+        </a>
+
+    </nav>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <section class="contenido">
+
+        <div class="autor">
+            FRANCISCO SALAMONE
+        </div>
+
+
+        <h1 class="titulo">
+            SALAMONE
+        </h1>
+
+
+        <div class="subtitulo">
+            EL ARQUITECTO MALDITO
+        </div>
+
+
+        <div class="linea-divisora"></div>
+
+
+        <p class="descripcion">
+            Proyecto realizado por alumnos de 6to M.M.O y 6to Programación
+            de la Escuela de Educación Secundaria Técnica N1 Monte Hermoso
+        </p>
+
+
+        <a href="#galeria" class="btn-explorar">
+
+            EXPLORAR
+
+            <span class="flecha-deco">
+                →
+            </span>
+
+        </a>
+
+    </section>
+
+
+    <!-- PNG ANGEL -->
+
+    <img
+        class="angel"
+        src="/home/morena/Downloads/Faceted Stone Guardian with Cross.png"
+        alt="Ángel escultura">
+
+
+    <!-- REDES -->
+
+    <div class="redes">
+
+        <img
+            src="/home/morena/Downloads/instagram_crema_artdeco.png"
+            alt="Instagram">
+
+        <img
+            src="/home/morena/Downloads/facebook_crema_artdeco.png"
+            alt="Facebook">
+
+    </div>
+
+
+</body>
+
+</html>
