@@ -15,9 +15,7 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Libre+Baskerville:wght@400&display=swap');
 
-        /* =========================
-           VARIABLES
-        ========================= */
+        /* VARIABLES */
 
         :root {
             --fondo: #211b19;
@@ -27,9 +25,7 @@
         }
 
 
-        /* =========================
-           FUENTES
-        ========================= */
+        /* FONTS*/
 
         @font-face {
             font-family: "Morrison Regular";
@@ -37,9 +33,7 @@
         }
 
 
-        /* =========================
-           RESET
-        ========================= */
+        /* RESET */
 
         * {
             margin: 0;
@@ -48,21 +42,33 @@
         }
 
         html {
-            scroll-behavior: smooth;
-        }
 
+          background: url("/home/morena/Desktop/salamoneWeb/obras/cieloDeco.png");
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size:cover;
+            scroll-behavior: smooth;
+           overflow: hidden;
+                  
+       }
+
+        
         body {
+         /*  margin: 0;
+           padding: 0;
+           min-height: 100vh;
+           background-attachment: fixed;
             background: url("/home/morena/Downloads/cieloDeco.png");
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
+            background-size: cover;*/
             color: var(--crema);
+            overflow: hidden;
         }
 
 
-        /* =========================
-           HERO
-        ========================= */
+        /* hero contenido importante de pagina */
 
         .hero {
             position: relative;
@@ -76,9 +82,7 @@
         }
 
 
-        /* =========================
-           NAV
-        ========================= */
+        /*nav superior*/
 
         .nav {
             position: relative;
@@ -97,15 +101,15 @@
 
         .nav a {
             position: relative;
-
+ 
             color: var(--crema);
 
             text-decoration: none;
-
+           
             font-family: "Cinzel", serif;
 
-            font-size: 17px;
-            font-weight: bold;
+            font-size: 20px;
+            font-weight: bolder;
 
             letter-spacing: 4px;
 
@@ -117,7 +121,7 @@
         .nav a::after {
 
             content: "";
-
+           
             position: absolute;
 
             top: 50%;
@@ -144,9 +148,7 @@
         }
 
 
-        /* =========================
-           CONTENIDO
-        ========================= */
+        /*contenido main */
 
         .contenido {
 
@@ -157,13 +159,11 @@
             width: 55%;
 
             padding-left: 6vw;
-            padding-top: 90px;
+            padding-top: 120px;
         }
 
 
-        /* =========================
-           AUTOR
-        ========================= */
+        /*texto autor */
 
         .autor {
 
@@ -173,7 +173,7 @@
 
             gap: 24px;
 
-            margin-bottom: 18px;
+            margin-bottom: 22px;
 
             font-family: "Cinzel", serif;
 
@@ -192,12 +192,10 @@
             height: 1px;
 
             background: var(--dorado);
-        }
+        }/*lineaas decorativas dorados donde dice */
 
 
-        /* =========================
-           TITULO
-        ========================= */
+        /* titulo (SALAMONE) */
 
         .titulo {
 
@@ -207,7 +205,7 @@
 
             font-weight: 400;
 
-            letter-spacing: -6px;
+            letter-spacing: -3px;
 
             line-height: .85;
 
@@ -218,13 +216,11 @@
 
 
         .titulo::first-letter {
-            letter-spacing: -8px;
+            letter-spacing: -2px;
         }
 
 
-        /* =========================
-           SUBTITULO
-        ========================= */
+        /* subtitulo ("EL arquitecto maldito")*/
 
         .subtitulo {
 
@@ -240,9 +236,7 @@
         }
 
 
-        /* =========================
-           LINEA DIVISORA
-        ========================= */
+        /*linea divisora dorada*/
 
         .linea-divisora {
 
@@ -280,9 +274,7 @@
         }
 
 
-        /* =========================
-           DESCRIPCION
-        ========================= */
+        /* descripcion de pagina*/
 
         .descripcion {
 
@@ -298,9 +290,7 @@
         }
 
 
-        /* =========================
-           BOTON EXPLORAR
-        ========================= */
+        /*btn explorar */
 
         .btn-explorar {
 
@@ -354,16 +344,14 @@
         }
 
 
-        /* =========================
-           REDES
-        ========================= */
+        /*iconos de redes sociales */
 
         .redes img {
 
             position: relative;
 
-            left: 130px;
-            top: 150px;
+            left: 110px;
+            top: 180px;
 
             width: 50px;
 
@@ -373,9 +361,7 @@
         }
 
 
-        /* =========================
-           ESCULTURA
-        ========================= */
+        /*escultura png */
 
         .angel {
 
@@ -412,11 +398,9 @@
         }
 
 
-        /* =========================
-           SCROLL
-        ========================= */
+        /*scroll */
 
-        .scroll {
+       /* .scroll {
 
             position: absolute;
 
@@ -439,12 +423,10 @@
 
             letter-spacing: 3px;
         }
+        */
 
-
-        /* =========================
-           RESPONSIVE 1100px
-        ========================= */
-
+/*responsive  1100px*/
+      
         @media (max-width: 1100px) {
 
             .contenido {
@@ -466,11 +448,9 @@
         }
 
 
-        /* =========================
-           RESPONSIVE 800px
-        ========================= */
+      
 
-        @media (max-width: 800px) {
+        @media (max-width: 800px) {  /*responsive 800*/
 
             .hero {
                 width: calc(100% - 20px);
@@ -533,11 +513,9 @@
         }
 
 
-        /* =========================
-           RESPONSIVE 500px
-        ========================= */
+        
 
-        @media (max-width: 500px) {
+        @media (max-width: 500px) { /*responsive 500px*/
 
             .nav {
                 justify-content: space-around;
@@ -577,7 +555,7 @@
             }
 
             .angel {
-                width: 105vw;
+                width: 105vw; 
                 right: -25%;
             }
         }
@@ -594,12 +572,11 @@
 
     <nav class="nav">
 
-        <a href="/home/morena/Desktop/salamone/galeriaSalamone.html">
-            GALERÍA
+            <a href="/home/morena/Desktop/salamoneWeb/pages/galeriaSalamone.html">GALERÍA
         </a>
 
         <a href="#recorrido">
-            RECORRIDO
+            RUTA SALOMONICA 
         </a>
 
         <a href="#biografia">
@@ -663,11 +640,10 @@
     <div class="redes">
 
         <img
-            src="/home/morena/Downloads/instagram_crema_artdeco.png"
-            alt="Instagram">
+            src="/home/morena/Desktop/salamoneWeb/obras/instagram_crema_artdeco.png"  alt="Instagram">
 
         <img
-            src="/home/morena/Downloads/facebook_crema_artdeco.png"
+            src="/home/morena/Desktop/salamoneWeb/obras/facebook_crema_artdeco.png"
             alt="Facebook">
 
     </div>
