@@ -1,5 +1,5 @@
 
-// Primer borrador: querySelecto y getElementbyClassName
+/* Primer borrador: querySelecto y getElementbyClassName
 const imagesDerecha = [
   "path1..",
   "path2..".
@@ -23,7 +23,7 @@ const boton = Document.getElementbyId("next-btn")
 boton.addEventListener('click' , function(){
   imgDerecha.src = imgDerecha2;
 });
-  //
+  */
 const imagesDerecha = [
   ];
 
